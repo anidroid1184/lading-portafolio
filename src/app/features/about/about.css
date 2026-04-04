@@ -1,0 +1,17 @@
+.about-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-hook,
+.about-value-list,
+.quick-stats {
+  margin: 0;
+}
+
+.pill {
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 9999px;
+  padding: 0.45rem 0.7rem;
+  color: #d0d0d0;
+}

@@ -1,0 +1,52 @@
+---
+const { Astro } = Astro;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juan Sebastián Valencia Londoño — Portfolio</title>
+    <meta name="description" content="Portfolio - Junior Backend Developer. Python, Golang, FastAPI, Django, PostgreSQL." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/global.css">
+  </head>
+  <body class="relative overflow-x-hidden">
+    <div class="halftone-overlay" aria-hidden="true"></div>
+
+    <div class="min-h-screen flex flex-col">
+      <header class="py-6 z-20">
+        <div class="container-max flex items-center justify-between">
+          <a href="/" class="text-xl font-graffiti text-white glitch-slow">@LondoDev</a>
+          <nav class="text-sm text-slate-300 hidden md:flex gap-6 items-center">
+            <a href="#projects" class="hover:text-white">Projects</a>
+            <a href="#tech" class="hover:text-white">Stack</a>
+            <a href="#contact" class="hover:text-white">Contact</a>
+            <a href="/portfolio-3d.html"
+               class="px-4 py-2 font-mono text-xs tracking-widest uppercase border border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 hover:border-cyan-400 transition-all">
+              ◈ 3D MODE
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="flex-1 z-10">
+        <slot />
+      </main>
+
+      <footer id="contact" class="py-8 z-20">
+        <div class="container-max text-center text-sm text-slate-400">
+          <div>Juan Sebastián Valencia Londoño — Junior Backend Developer</div>
+          <div class="mt-2">Student, 7th semester — Ingeniería Electrónica, Univalle · English B2</div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Decorative layered glows -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
+      <div style="position:absolute; right:-10%; top:10%; width:600px; height:600px; background: radial-gradient(circle at 30% 30%, rgba(111,45,189,0.12), transparent 30%); filter: blur(60px);"></div>
+      <div style="position:absolute; left:-10%; bottom:5%; width:500px; height:500px; background: radial-gradient(circle at 70% 70%, rgba(0,168,255,0.08), transparent 30%); filter: blur(60px);"></div>
+    </div>
+  </body>
+</html>

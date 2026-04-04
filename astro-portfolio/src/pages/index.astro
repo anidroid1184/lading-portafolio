@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout>
+  <section class="min-h-[70vh] flex items-center">
+    <div class="container-max">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 class="text-4xl md:text-6xl font-graffiti text-white leading-tight">
+            <span class="spider-sense">Juan Sebastián Valencia Londoño</span>
+          </h1>
+          <p class="mt-4 text-lg text-slate-300 max-w-xl">Junior Backend Developer — Student (7th semester) in Ingeniería Electrónica at Univalle. Instructor técnico with a focus on Python backend (FastAPI, Django). English: B2.</p>
+
+          <div class="mt-6 flex gap-3">
+            <a class="px-4 py-2 bg-sv-purple text-white rounded comic-border" href="#projects">See Projects</a>
+            <a class="px-4 py-2 border border-slate-600 text-slate-200 rounded" href="#tech">Tech Stack</a>
+          </div>
+        </div>
+
+        <div class="p-6 comic-border">
+          <h3 class="font-graffiti text-2xl text-sv-pink">The Multiverse Stack</h3>
+          <div class="mt-4 grid grid-cols-3 gap-3">
+            <div class="bg-[#0e0e12] p-3 comic-border text-center">
+              <div class="font-bold">Python</div>
+              <div class="text-xs mt-1 text-slate-300">FastAPI · Django</div>
+            </div>
+            <div class="bg-[#0e0e12] p-3 comic-border text-center">
+              <div class="font-bold">Golang</div>
+              <div class="text-xs mt-1 text-slate-300">Backend systems & performance</div>
+            </div>
+            <div class="bg-[#0e0e12] p-3 comic-border text-center">
+              <div class="font-bold">JavaScript</div>
+              <div class="text-xs mt-1 text-slate-300">Small front interactions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-16">
+    <div class="container-max">
+      <h2 class="text-3xl font-graffiti text-sv-blue">Projects</h2>
+      <p class="text-slate-300 mt-2">Selected works — dynamic grid (placeholder for Angular island filter)</p>
+
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="p-4 comic-border">
+          <h3 class="font-bold">Attendance System</h3>
+          <p class="text-sm text-slate-300 mt-2">Backend for attendance tracking with API endpoints and auth.</p>
+        </article>
+        <article class="p-4 comic-border">
+          <h3 class="font-bold">Color Palette Identifier</h3>
+          <p class="text-sm text-slate-300 mt-2">Tool to extract palettes from images. Uses image processing.</p>
+        </article>
+        <article class="p-4 comic-border">
+          <h3 class="font-bold">User Management in Go</h3>
+          <p class="text-sm text-slate-300 mt-2">Authentication and role-based access implemented in Go.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications" class="py-16 bg-gradient-to-b from-transparent to-[#07030b]">
+    <div class="container-max">
+      <h2 class="text-3xl font-graffiti text-sv-pink">Certifications & Cloud</h2>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="p-4 comic-border text-center">Google Cloud</div>
+        <div class="p-4 comic-border text-center">Terraform</div>
+        <div class="p-4 comic-border text-center">Docker</div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

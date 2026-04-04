@@ -1,0 +1,13 @@
+.contact-link {
+	border: 1px solid rgb(100 116 139 / 45%);
+	border-radius: 9999px;
+	padding: 0.45rem 0.85rem;
+	color: rgb(226 232 240);
+	transition: all 150ms ease;
+}
+
+.contact-link:hover {
+	border-color: rgb(0 168 255 / 85%);
+	color: white;
+	background: rgb(0 168 255 / 14%);
+}

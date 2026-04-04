@@ -14,10 +14,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render portfolio hero hierarchy', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, lading-portafolio');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Construyo infraestructuras escalables y APIs de alto rendimiento.');
+    expect(compiled.querySelector('h2')?.textContent).toContain('Juan Sebastián Valencia Londoño');
   });
 });
