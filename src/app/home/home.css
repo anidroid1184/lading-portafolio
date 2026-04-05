@@ -12,24 +12,19 @@
   text-align: center;
 }
 
-/* Terminal preview */
 .terminal-preview {
-  background: #0a0a0a;
-  border: 1px solid rgba(230, 25, 25, 0.3);
+  background: #161B22;
+  border: 1px solid rgba(88, 166, 255, 0.3);
   border-radius: 0.5rem;
   overflow: hidden;
   margin-bottom: 2.5rem;
-  box-shadow: 0 0 30px rgba(230, 25, 25, 0.1);
+  box-shadow: 0 0 30px rgba(88, 166, 255, 0.08);
   animation: terminal-glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes terminal-glow {
-  from {
-    box-shadow: 0 0 20px rgba(230, 25, 25, 0.05);
-  }
-  to {
-    box-shadow: 0 0 40px rgba(230, 25, 25, 0.2);
-  }
+  from { box-shadow: 0 0 20px rgba(88, 166, 255, 0.05); }
+  to { box-shadow: 0 0 40px rgba(88, 166, 255, 0.15); }
 }
 
 .terminal-header {
@@ -37,8 +32,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  background: rgba(26, 26, 26, 0.8);
-  border-bottom: 1px solid rgba(226, 224, 217, 0.1);
+  background: rgba(33, 38, 45, 0.8);
+  border-bottom: 1px solid #30363D;
 }
 
 .terminal-dot {
@@ -47,20 +42,14 @@
   border-radius: 50%;
 }
 
-.dot-red {
-  background: #e61919;
-}
-.dot-yellow {
-  background: #f59e0b;
-}
-.dot-green {
-  background: #22c55e;
-}
+.dot-red { background: #F85149; }
+.dot-yellow { background: #D29922; }
+.dot-green { background: #238636; }
 
 .terminal-title {
   font-family: 'Courier Prime', monospace;
   font-size: 0.7rem;
-  color: #787470;
+  color: #8B949E;
   margin-left: 0.5rem;
 }
 
@@ -77,7 +66,7 @@
 }
 
 .prompt-text {
-  color: #e61919;
+  color: #58A6FF;
   font-weight: bold;
 }
 
@@ -87,7 +76,7 @@
 }
 
 .typed-word {
-  color: #e2e0d9;
+  color: #F0F6FC;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -97,7 +86,7 @@
 }
 
 .typed-cursor {
-  color: #e61919;
+  color: #58A6FF;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -107,21 +96,15 @@
 }
 
 @keyframes cursor-blink {
-  0%,
-  50% {
-    opacity: 1;
-  }
-  51%,
-  100% {
-    opacity: 0;
-  }
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 .terminal-output-line {
   margin-top: 0.75rem;
   font-family: 'Courier Prime', monospace;
   font-size: 0.8rem;
-  color: #a8a4a0;
+  color: #C9D1D9;
   opacity: 0;
   transform: translateY(8px);
   transition: all 0.4s ease;
@@ -132,7 +115,6 @@
   transform: translateY(0);
 }
 
-/* Home info */
 .home-title {
   display: flex;
   flex-direction: column;
@@ -149,38 +131,37 @@
 
 .title-primary {
   font-size: 2rem;
-  color: #e61919;
+  color: #58A6FF;
 }
 
 .title-secondary {
   font-size: 1.25rem;
-  color: #e2e0d9;
+  color: #F0F6FC;
 }
 
 .home-subtitle {
   font-family: 'Courier Prime', monospace;
   font-size: 0.9rem;
-  color: #a8a4a0;
+  color: #C9D1D9;
   margin-bottom: 1.5rem;
 }
 
 .home-description {
   font-size: 0.95rem;
-  color: #d4d2cc;
+  color: #F0F6FC;
   line-height: 1.6;
   margin-bottom: 2rem;
 }
 
 .command-inline {
-  background: rgba(230, 25, 25, 0.15);
-  color: #e61919;
+  background: rgba(88, 166, 255, 0.1);
+  color: #58A6FF;
   padding: 0.15rem 0.4rem;
   border-radius: 0.25rem;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.8rem;
 }
 
-/* Command hints */
 .command-hints {
   display: flex;
   flex-direction: column;
@@ -191,7 +172,7 @@
 .hint-label {
   font-family: 'Courier Prime', monospace;
   font-size: 0.75rem;
-  color: #787470;
+  color: #8B949E;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -205,7 +186,7 @@
 
 .hint-chip {
   background: transparent;
-  border: 1px solid rgba(230, 25, 25, 0.3);
+  border: 1px solid rgba(88, 166, 255, 0.3);
   border-radius: 0.25rem;
   padding: 0.35rem 0.75rem;
   cursor: pointer;
@@ -213,17 +194,16 @@
 }
 
 .hint-chip:hover {
-  background: rgba(230, 25, 25, 0.1);
-  border-color: rgba(230, 25, 25, 0.5);
+  background: rgba(88, 166, 255, 0.1);
+  border-color: #58A6FF;
 }
 
 .hint-chip code {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
-  color: #e61919;
+  color: #58A6FF;
 }
 
-/* Popup hint */
 .hint-popup {
   position: fixed;
   bottom: 80px;
@@ -238,8 +218,8 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: #1a1a1a;
-  border: 1px solid rgba(230, 25, 25, 0.3);
+  background: #161B22;
+  border: 1px solid rgba(88, 166, 255, 0.3);
   border-radius: 0.5rem;
   padding: 1rem 1.25rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
@@ -254,19 +234,19 @@
   flex: 1;
   font-family: 'Courier Prime', monospace;
   font-size: 0.8rem;
-  color: #d4d2cc;
+  color: #C9D1D9;
   line-height: 1.4;
   margin: 0;
 }
 
 .hint-popup-text strong {
-  color: #e61919;
+  color: #58A6FF;
 }
 
 .hint-popup-close {
   background: transparent;
   border: none;
-  color: #787470;
+  color: #8B949E;
   font-size: 1.25rem;
   cursor: pointer;
   padding: 0;
@@ -275,10 +255,9 @@
 }
 
 .hint-popup-close:hover {
-  color: #e2e0d9;
+  color: #F0F6FC;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .title-primary {
     font-size: 1.5rem;

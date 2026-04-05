@@ -1,7 +1,7 @@
 .filter-btn {
-  border: 1px solid rgba(226, 224, 217, 0.2);
-  background: #141414;
-  color: #d0d0d0;
+  border: 1px solid #30363D;
+  background: #161B22;
+  color: #C9D1D9;
   border-radius: 9999px;
   padding: 0.42rem 0.85rem;
   cursor: pointer;
@@ -9,13 +9,14 @@
 }
 
 .filter-btn:hover {
-  border-color: rgba(230, 25, 25, 0.3);
+  border-color: #58A6FF;
+  color: #F0F6FC;
 }
 
 .filter-btn--active {
-  color: #fff;
-  border-color: #e61919;
-  background: rgba(230, 25, 25, 0.15);
+  color: #F0F6FC;
+  border-color: #58A6FF;
+  background: rgba(88, 166, 255, 0.15);
 }
 
 .projects-grid {
@@ -41,8 +42,8 @@
 }
 
 .project-visual {
-  background: rgba(26, 26, 26, 0.05);
-  border: 1px dashed rgba(26, 26, 26, 0.1);
+  background: rgba(33, 38, 45, 0.5);
+  border: 1px dashed #30363D;
   border-radius: 0.25rem;
   padding: 0.75rem;
   margin: 0.75rem 0;
@@ -51,35 +52,27 @@
 }
 
 .project-visual--mermaid {
-  border-left: 3px solid rgba(230, 25, 25, 0.4);
+  border-left: 3px solid rgba(88, 166, 255, 0.4);
 }
 
 .project-visual--terminal {
-  background: #080a0d;
-  color: #e2e0d9;
-  border: 1px solid rgba(226, 224, 217, 0.05);
+  background: #0D1117;
+  color: #C9D1D9;
+  border: 1px solid #30363D;
 }
 
 .project-visual-label {
   font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(26, 26, 26, 0.4);
+  color: #8B949E;
   margin-bottom: 0.5rem;
-}
-
-.project-visual--terminal .project-visual-label {
-  color: rgba(226, 224, 217, 0.3);
 }
 
 .project-visual pre {
   margin: 0;
-  color: rgba(26, 26, 26, 0.8);
+  color: #C9D1D9;
   white-space: pre-wrap;
-}
-
-.project-visual--terminal pre {
-  color: #e2e0d9;
 }
 
 .project-tags {
@@ -94,14 +87,14 @@
   font-family: 'JetBrains Mono', monospace;
   padding: 0.2rem 0.5rem;
   border-radius: 0.25rem;
-  background: rgba(230, 25, 25, 0.1);
-  color: #e61919;
-  border: 1px solid rgba(230, 25, 25, 0.2);
+  background: rgba(88, 166, 255, 0.1);
+  color: #58A6FF;
+  border: 1px solid rgba(88, 166, 255, 0.2);
 }
 
 .project-impact {
   font-size: 0.8rem;
-  color: rgba(26, 26, 26, 0.6);
+  color: #C9D1D9;
   font-style: italic;
   margin: 0.75rem 0;
 }

@@ -7,29 +7,27 @@
   bottom: 0;
   left: 384px;
   right: 0;
-  background: #1a1a1a;
-  border-top: 1px solid rgba(226, 224, 217, 0.1);
+  background: #161B22;
+  border-top: 1px solid #30363D;
   padding: 0.5rem 2rem;
   z-index: 50;
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Feedback area */
 .feedback {
   padding: 0.25rem 0.5rem;
   margin-bottom: 0.25rem;
-  background: rgba(230, 25, 25, 0.05);
+  background: rgba(88, 166, 255, 0.05);
   border-radius: 0.25rem;
   min-height: 1.25rem;
 }
 
 .feedback-text {
-  color: #a8a4a0;
+  color: #C9D1D9;
   font-size: 0.75rem;
   font-family: 'Courier Prime', monospace;
 }
 
-/* Input area */
 .input-area {
   display: flex;
   align-items: center;
@@ -37,7 +35,7 @@
 }
 
 .prompt-text {
-  color: #e61919;
+  color: #58A6FF;
   font-size: 0.875rem;
   font-weight: bold;
   white-space: nowrap;
@@ -48,25 +46,25 @@
   background: transparent;
   border: none;
   outline: none;
-  color: #e2e0d9;
+  color: #F0F6FC;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.875rem;
   padding: 0.25rem 0;
 }
 
 .command-input::placeholder {
-  color: #787470;
+  color: #8B949E;
 }
 
 .prompt-cursor {
-  color: #e61919;
+  color: #58A6FF;
   font-size: 1rem;
 }
 
 .help-btn {
   background: transparent;
   border: none;
-  color: #787470;
+  color: #8B949E;
   cursor: pointer;
   padding: 0.25rem;
   display: flex;
@@ -76,17 +74,16 @@
 }
 
 .help-btn:hover {
-  color: #e61919;
+  color: #58A6FF;
 }
 
-/* Help overlay */
 .help-overlay {
   position: absolute;
   bottom: 100%;
   left: 0;
   right: 0;
-  background: rgba(26, 26, 26, 0.97);
-  border-top: 1px solid rgba(230, 25, 25, 0.2);
+  background: rgba(22, 27, 34, 0.97);
+  border-top: 1px solid rgba(88, 166, 255, 0.2);
   padding: 1rem 2rem;
   max-height: 300px;
   overflow-y: auto;
@@ -99,11 +96,11 @@
   align-items: center;
   margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(226, 224, 217, 0.05);
+  border-bottom: 1px solid #30363D;
 }
 
 .help-title {
-  color: #e61919;
+  color: #58A6FF;
   font-size: 0.7rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -113,7 +110,7 @@
 .help-close {
   background: none;
   border: none;
-  color: rgba(226, 224, 217, 0.4);
+  color: #8B949E;
   font-size: 1.25rem;
   cursor: pointer;
   padding: 0;
@@ -121,7 +118,7 @@
 }
 
 .help-close:hover {
-  color: #e2e0d9;
+  color: #F0F6FC;
 }
 
 .help-list {
@@ -145,22 +142,21 @@
 }
 
 .help-item:hover {
-  background: rgba(230, 25, 25, 0.1);
+  background: rgba(88, 166, 255, 0.1);
 }
 
 .help-command {
-  color: #e61919;
+  color: #58A6FF;
   font-size: 0.75rem;
   font-weight: bold;
   min-width: 120px;
 }
 
 .help-description {
-  color: #a8a4a0;
+  color: #C9D1D9;
   font-size: 0.75rem;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .terminal-bar {
     left: 64px;

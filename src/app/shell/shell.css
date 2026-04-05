@@ -9,11 +9,10 @@
   height: 100%;
 }
 
-/* Sidebar */
 .sidebar {
-  width: 384px; /* w-96 */
-  background: #080a0d;
-  border-right: 1px solid rgba(226, 224, 217, 0.1);
+  width: 384px;
+  background: #0D1117;
+  border-right: 1px solid #30363D;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -27,22 +26,21 @@
 .section-label {
   font-size: 0.875rem;
   font-weight: bold;
-  color: #e61919;
+  color: #58A6FF;
   text-transform: uppercase;
   margin-bottom: 2rem;
   letter-spacing: 0.15em;
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Avatar */
 .avatar-container {
-  width: 192px; /* w-48 */
-  height: 192px; /* h-48 */
+  width: 192px;
+  height: 192px;
   border-radius: 50%;
-  border: 2px solid rgba(230, 25, 25, 0.5);
+  border: 2px solid rgba(88, 166, 255, 0.5);
   overflow: hidden;
   position: relative;
-  background: #1a1a1a;
+  background: #161B22;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,42 +63,41 @@
   right: 1rem;
   width: 1rem;
   height: 1rem;
-  background: #22c55e;
+  background: #238636;
   border-radius: 50%;
-  border: 2px solid #080a0d;
-  box-shadow: 0 0 10px #22c55e;
+  border: 2px solid #0D1117;
+  box-shadow: 0 0 10px #238636;
 }
 
 .operator-id {
   font-size: 1.5rem;
   font-weight: bold;
   font-family: 'JetBrains Mono', monospace;
-  color: #e2e0d9;
+  color: #F0F6FC;
   letter-spacing: -0.02em;
 }
 
 .clearance-text {
   font-size: 0.6875rem;
   font-family: 'Courier Prime', monospace;
-  color: #a8a4a0;
+  color: #C9D1D9;
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
 
-/* Comms links */
 .comms-link {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   font-family: 'Courier Prime', monospace;
   font-size: 0.875rem;
-  color: rgba(226, 224, 217, 0.85);
+  color: #C9D1D9;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .comms-link:hover {
-  color: #e61919;
+  color: #58A6FF;
 }
 
 .comms-link .material-symbols-outlined {
@@ -109,7 +106,7 @@
 
 .emergency-email {
   display: block;
-  color: #f59e0b;
+  color: #D29922;
   font-size: 1rem;
   font-weight: bold;
   text-decoration: underline;
@@ -119,25 +116,22 @@
 }
 
 .emergency-email:hover {
-  color: #e2e0d9;
+  color: #F0F6FC;
 }
 
-/* Sidebar footer */
 .sidebar-footer {
   padding: 2rem;
-  border-top: 1px solid rgba(226, 224, 217, 0.1);
-  background: rgba(26, 26, 26, 0.4);
+  border-top: 1px solid #30363D;
+  background: rgba(22, 27, 34, 0.4);
 }
 
-/* Main Content */
 .main-content {
   flex: 1;
   overflow-y: auto;
-  background: #080a0d;
-  padding-bottom: 60px; /* Space for terminal bar */
+  background: #0D1117;
+  padding-bottom: 60px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .sidebar {
     width: 64px;
