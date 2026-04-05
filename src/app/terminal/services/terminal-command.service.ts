@@ -16,7 +16,12 @@ export class TerminalCommandService {
       {
         name: 'help',
         description: 'Show available commands',
-        execute: (args: string[]) => this.showHelp(),
+        execute: (args: string[]) => this.showHelp(args),
+      },
+      {
+        name: '--help',
+        description: 'Show available commands (alternative format)',
+        execute: (args: string[]) => this.showHelp(args),
       },
       {
         name: 'whoami',
@@ -58,6 +63,26 @@ export class TerminalCommandService {
         description: 'Minimize/close terminal interface',
         execute: (args: string[]) => this.exitTerminal(),
       },
+      {
+        name: 'echo',
+        description: 'Display a line of text',
+        execute: (args: string[]) => this.echo(args),
+      },
+      {
+        name: 'date',
+        description: 'Display current date and time',
+        execute: (args: string[]) => this.date(),
+      },
+      {
+        name: 'time',
+        description: 'Display current time',
+        execute: (args: string[]) => this.time(),
+      },
+      {
+        name: 'sysinfo',
+        description: 'Display system information',
+        execute: (args: string[]) => this.sysinfo(),
+      },
     ];
   }
 
@@ -83,10 +108,11 @@ export class TerminalCommandService {
   }
 
   // Command implementations
-  private showHelp(): string {
+  private showHelp(args: string[]): string {
     return `
 Available Commands:
   help                    Show this help message
+  --help                  Show available commands (alternative format)
   whoami                  Display operator information
   ls_experience           List certifications and experience
   ls_projects             List available projects
@@ -95,6 +121,10 @@ Available Commands:
   sudo_rootwave           Activate rootwave easter egg
   clear                   Clear terminal screen
   exit                    Minimize/close terminal interface
+  echo [text]             Display a line of text
+  date                    Display current date and time
+  time                    Display current time
+  sysinfo                 Display system information
     `.trim();
   }
 
@@ -174,7 +204,7 @@ GitHub Contributions for LondoDev:
 ██╔████╔██║███████║██╔██╗ ██║███████╗
 ██║╚██╔╝██║██╔══██╗██║╚██╗██║╚════██║
 ██║ ╚═╝ ██║██║  ██║██║ ╚████║███████║
-╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═══╝╚═══╝╚═══╝
 ROOTWAVE PROTOCOL ACTIVATED
 System override: SUCCESS
 Access level: Ω-OMEGA
@@ -187,5 +217,30 @@ Access level: Ω-OMEGA
 
   private exitTerminal(): string {
     return 'Terminal interface minimized. Type any command to restore.';
+  }
+
+  private echo(args: string[]): string {
+    return args.join(' ') || '';
+  }
+
+  private date(): string {
+    return new Date().toLocaleString();
+  }
+
+  private time(): string {
+    return new Date().toLocaleTimeString();
+  }
+
+  private sysinfo(): string {
+    return `
+SYSTEM INFORMATION:
+  OS: Web Terminal v1.0
+  SHELL: /bin/bash
+  TERM: xterm-256color
+  USER: operator
+  HOME: /home/operator
+  LOCALE: en_US.UTF-8
+  UPTIME: 0 days, 0 hours
+    `.trim();
   }
 }
