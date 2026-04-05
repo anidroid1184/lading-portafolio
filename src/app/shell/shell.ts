@@ -9,5 +9,5 @@ import { TerminalBar } from '../terminal/terminal-bar/terminal-bar';
   styleUrl: './shell.css',
 })
 export class Shell {
-  avatarUrl = '/avatar.jpeg';
+  avatarUrl = 'avatar.jpeg';
 }
