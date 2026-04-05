@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: 'npm'
@@ -40,8 +40,11 @@ jobs:
       - name: Prepare SPA fallback
         run: cp dist/lading-portafolio/browser/index.html dist/lading-portafolio/browser/404.html
 
+      - name: Create .nojekyll file
+        run: touch dist/lading-portafolio/browser/.nojekyll
+
       - name: Setup Pages
-        uses: actions/configure-pages@v6
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
