@@ -82,7 +82,7 @@
 .clearance-text {
   font-size: 0.6875rem;
   font-family: 'Courier Prime', monospace;
-  color: rgba(226, 224, 217, 0.8);
+  color: #a8a4a0;
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
