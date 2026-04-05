@@ -1,16 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { Hero } from './features/hero/hero';
-import { About } from './features/about/about';
-import { Projects } from './features/projects/projects';
-import { Experience } from './features/experience/experience';
-import { Contact } from './features/contact/contact';
-import { Components } from './shared/components/components';
+import { TerminalShell } from './terminal/terminal-shell/terminal-shell';
 
 @Component({
   selector: 'app-root',
-  imports: [Hero, About, Components, Projects, Experience, Contact],
+  imports: [TerminalShell],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('lading-portafolio');
