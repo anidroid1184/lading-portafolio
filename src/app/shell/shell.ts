@@ -8,4 +8,6 @@ import { TerminalBar } from '../terminal/terminal-bar/terminal-bar';
   templateUrl: './shell.html',
   styleUrl: './shell.css',
 })
-export class Shell {}
+export class Shell {
+  avatarUrl = '/avatar.jpeg';
+}
