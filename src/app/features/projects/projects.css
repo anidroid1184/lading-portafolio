@@ -1,7 +1,7 @@
 .filter-btn {
-  border: 1px solid rgb(255 255 255 / 10%);
+  border: 1px solid rgba(226, 224, 217, 0.2);
   background: #141414;
-  color: #b8b8b8;
+  color: #d0d0d0;
   border-radius: 9999px;
   padding: 0.42rem 0.85rem;
   cursor: pointer;

@@ -47,7 +47,7 @@
 .indicator-dot {
   display: inline-block;
   font-size: 0.75rem;
-  color: rgba(226, 224, 217, 0.35);
+  color: rgba(226, 224, 217, 0.5);
   transition: color 0.4s ease;
 }
 
@@ -56,12 +56,12 @@
 }
 
 .stage-message {
-  color: rgba(226, 224, 217, 0.35);
+  color: rgba(226, 224, 217, 0.5);
   transition: color 0.4s ease;
 }
 
 .stage-lit .stage-message {
-  color: rgba(226, 224, 217, 0.7);
+  color: rgba(226, 224, 217, 0.85);
 }
 
 .stage-current .stage-message {

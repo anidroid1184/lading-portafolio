@@ -55,7 +55,7 @@
 }
 
 .command-input::placeholder {
-  color: rgba(226, 224, 217, 0.5);
+  color: rgba(226, 224, 217, 0.6);
 }
 
 .prompt-cursor {
@@ -66,7 +66,7 @@
 .help-btn {
   background: transparent;
   border: none;
-  color: rgba(226, 224, 217, 0.4);
+  color: rgba(226, 224, 217, 0.7);
   cursor: pointer;
   padding: 0.25rem;
   display: flex;
@@ -156,7 +156,7 @@
 }
 
 .help-description {
-  color: rgba(226, 224, 217, 0.7);
+  color: rgba(226, 224, 217, 0.8);
   font-size: 0.75rem;
 }
 
