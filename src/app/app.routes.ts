@@ -11,6 +11,10 @@ export const routes: Routes = [
     loadComponent: () => import('./shell/shell').then((m) => m.Shell),
     children: [
       {
+        path: 'home',
+        loadComponent: () => import('./home/home').then((m) => m.Home),
+      },
+      {
         path: 'whoami',
         loadComponent: () => import('./features/about/about').then((m) => m.About),
       },
@@ -28,5 +32,5 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: '**', redirectTo: 'whoami' },
+  { path: '**', redirectTo: 'home' },
 ];

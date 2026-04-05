@@ -71,7 +71,7 @@ export class Loading implements OnInit, OnDestroy {
       this.activeStage.set(newActiveStage);
 
       if (newProgress >= 100) {
-        setTimeout(() => this.router.navigate(['/whoami']), 300);
+        setTimeout(() => this.router.navigate(['/home']), 300);
         return;
       }
 
@@ -85,6 +85,6 @@ export class Loading implements OnInit, OnDestroy {
     if (this.timeoutId) {
       clearTimeout(this.timeoutId);
     }
-    this.router.navigate(['/whoami']);
+    this.router.navigate(['/home']);
   }
 }

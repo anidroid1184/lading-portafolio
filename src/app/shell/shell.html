@@ -14,7 +14,20 @@
         <div class="relative group">
           <div class="avatar-container inner-glow-red">
             <div class="absolute inset-0 opacity-10 pointer-events-none hole-pattern-bg"></div>
-            <span class="material-symbols-outlined text-7xl opacity-30">person</span>
+            <img
+              src="/avatar.jpeg"
+              alt="Foto de perfil de Sebastian"
+              class="avatar-image"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <span
+              class="material-symbols-outlined text-7xl opacity-30 avatar-fallback"
+              style="display: none"
+              >person</span
+            >
             <div
               class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-mainframe-bg/60"
             >

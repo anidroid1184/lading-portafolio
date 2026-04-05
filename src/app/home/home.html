@@ -1,0 +1,69 @@
+<section class="home-container">
+  <div class="home-content">
+    <!-- Terminal animation -->
+    <div class="terminal-preview">
+      <div class="terminal-header">
+        <span class="terminal-dot dot-red"></span>
+        <span class="terminal-dot dot-yellow"></span>
+        <span class="terminal-dot dot-green"></span>
+        <span class="terminal-title">operator@archive:~</span>
+      </div>
+      <div class="terminal-body">
+        <p class="terminal-line">
+          <span class="prompt-text">OPERATOR@ARCHIVE:~$</span>
+          <span class="typed-text">
+            <span class="typed-word" [class.typed-visible]="showTypedText">help</span>
+            <span class="typed-cursor" [class.cursor-blink]="showTypedText">_</span>
+          </span>
+        </p>
+        <p class="terminal-output-line" [class.visible]="showOutput">
+          > Usá la terminal de abajo para navegar por el portafolio
+        </p>
+      </div>
+    </div>
+
+    <!-- Main info -->
+    <div class="home-info">
+      <h1 class="home-title">
+        <span class="title-line title-primary">Ingeniero Electrónico</span>
+        <span class="title-line title-secondary">Full-Stack Developer</span>
+      </h1>
+      <p class="home-subtitle">
+        Estudiante de Ingeniería Electrónica · Universidad del Valle · 9no semestre
+      </p>
+      <p class="home-description">
+        Este es mi portafolio interactivo. Escribe <code class="command-inline">help</code> en la
+        terminal de abajo para ver los comandos disponibles.
+      </p>
+    </div>
+
+    <!-- Command hints -->
+    <div class="command-hints">
+      <span class="hint-label">Comandos rápidos:</span>
+      <div class="hint-commands">
+        <button class="hint-chip" (click)="executeCommand('whoami')"><code>whoami</code></button>
+        <button class="hint-chip" (click)="executeCommand('projects')">
+          <code>projects</code>
+        </button>
+        <button class="hint-chip" (click)="executeCommand('experience')">
+          <code>experience</code>
+        </button>
+        <button class="hint-chip" (click)="executeCommand('contact')"><code>contact</code></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup hint -->
+  @if (showHint) {
+    <div class="hint-popup" [@fadeInUp]>
+      <div class="hint-popup-content">
+        <span class="hint-popup-icon">💡</span>
+        <p class="hint-popup-text">
+          Puedes usar la <strong>terminal de abajo</strong> para navegar por el portafolio. Escribe
+          un comando y presioná <strong>Enter</strong>.
+        </p>
+        <button class="hint-popup-close" (click)="dismissHint()" aria-label="Cerrar hint">×</button>
+      </div>
+    </div>
+  }
+</section>
