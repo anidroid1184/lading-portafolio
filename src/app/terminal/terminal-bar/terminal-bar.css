@@ -24,8 +24,8 @@
 }
 
 .feedback-text {
-  color: rgba(226, 224, 217, 0.6);
-  font-size: 0.7rem;
+  color: rgba(226, 224, 217, 0.8);
+  font-size: 0.75rem;
   font-family: 'Courier Prime', monospace;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .command-input::placeholder {
-  color: rgba(226, 224, 217, 0.3);
+  color: rgba(226, 224, 217, 0.5);
 }
 
 .prompt-cursor {
@@ -156,8 +156,8 @@
 }
 
 .help-description {
-  color: rgba(226, 224, 217, 0.5);
-  font-size: 0.7rem;
+  color: rgba(226, 224, 217, 0.7);
+  font-size: 0.75rem;
 }
 
 /* Responsive */
