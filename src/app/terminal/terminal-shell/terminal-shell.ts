@@ -107,10 +107,10 @@ export class TerminalShell {
 
     // Process command
     const result = this.terminalCommandService.executeCommand(command);
-    if (result) {
+    if (result && result.message) {
       // Split multi-line output into separate lines for better display
-      const lines = result.split('\n');
-      lines.forEach((line) => {
+      const lines = result.message.split('\n');
+      lines.forEach((line: string) => {
         if (line.trim() !== '') {
           this.outputLines.push(line);
         }

@@ -1,0 +1,87 @@
+<div class="shell-container">
+  <!-- Skip link for keyboard users -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Sidebar -->
+  <aside
+    class="sidebar sidebar-scroll"
+    aria-label="Barra lateral con información de perfil y redes sociales"
+  >
+    <!-- Identity Matrix -->
+    <section class="sidebar-section border-b border-card-cream/10 bg-card-ink/20">
+      <h3 class="section-label">IDENTITY_MATRIX</h3>
+      <div class="flex flex-col items-center gap-8">
+        <div class="relative group">
+          <div class="avatar-container inner-glow-red">
+            <div class="absolute inset-0 opacity-10 pointer-events-none hole-pattern-bg"></div>
+            <span class="material-symbols-outlined text-7xl opacity-30">person</span>
+            <div
+              class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-mainframe-bg/60"
+            >
+              <span class="text-[10px] font-printer text-highlight-red font-bold"
+                >REPLACE_AVATAR</span
+              >
+            </div>
+          </div>
+          <div class="status-dot"></div>
+        </div>
+        <div class="w-full text-center space-y-2">
+          <div class="operator-id">OPERATOR_ID: ARC-9921</div>
+          <div class="flex justify-center items-center gap-3">
+            <span class="clearance-text">Clearance: O5-ALPHA</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comms Link -->
+    <section class="sidebar-section flex-1">
+      <h3 class="section-label">COMMS_LINK</h3>
+      <div class="space-y-6 font-printer">
+        <div class="space-y-4">
+          <a
+            class="comms-link"
+            href="https://github.com/LondoDev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="material-symbols-outlined text-lg">link</span>
+            <span>GITHUB_REPO</span>
+          </a>
+          <a
+            class="comms-link"
+            href="https://linkedin.com/in/LondoDev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="material-symbols-outlined text-lg">link</span>
+            <span>LINKEDIN_STATION</span>
+          </a>
+        </div>
+        <div class="pt-8 border-t border-card-cream/5">
+          <p class="opacity-40 uppercase text-[10px] mb-4">Emergency_Buffer:</p>
+          <a class="emergency-email" href="mailto:londedev@example.com">CONTACT@SYSTEM</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- System Status -->
+    <div class="sidebar-footer">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="w-2.5 h-2.5 bg-green-500 rounded-full shadow-[0_0_10px_#22c55e]"></span>
+        <span class="text-xs uppercase font-printer">System Status: Optimal</span>
+      </div>
+      <div class="text-[10px] opacity-30 font-printer uppercase tracking-widest">
+        Last_Sync: 2024-05-12 // 02:44:11
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-content" id="main-content">
+    <router-outlet />
+  </main>
+
+  <!-- Terminal Bar (fixed bottom) -->
+  <app-terminal-bar aria-label="Barra de comandos terminal" />
+</div>

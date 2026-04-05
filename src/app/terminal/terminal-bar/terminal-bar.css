@@ -1,0 +1,173 @@
+:host {
+  display: block;
+}
+
+.terminal-bar {
+  position: fixed;
+  bottom: 0;
+  left: 384px;
+  right: 0;
+  background: #1a1a1a;
+  border-top: 1px solid rgba(226, 224, 217, 0.1);
+  padding: 0.5rem 2rem;
+  z-index: 50;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Feedback area */
+.feedback {
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0.25rem;
+  background: rgba(230, 25, 25, 0.05);
+  border-radius: 0.25rem;
+  min-height: 1.25rem;
+}
+
+.feedback-text {
+  color: rgba(226, 224, 217, 0.6);
+  font-size: 0.7rem;
+  font-family: 'Courier Prime', monospace;
+}
+
+/* Input area */
+.input-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prompt-text {
+  color: #e61919;
+  font-size: 0.875rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.command-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e2e0d9;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  padding: 0.25rem 0;
+}
+
+.command-input::placeholder {
+  color: rgba(226, 224, 217, 0.3);
+}
+
+.prompt-cursor {
+  color: #e61919;
+  font-size: 1rem;
+}
+
+.help-btn {
+  background: transparent;
+  border: none;
+  color: rgba(226, 224, 217, 0.4);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.help-btn:hover {
+  color: #e61919;
+}
+
+/* Help overlay */
+.help-overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(26, 26, 26, 0.97);
+  border-top: 1px solid rgba(230, 25, 25, 0.2);
+  padding: 1rem 2rem;
+  max-height: 300px;
+  overflow-y: auto;
+  backdrop-filter: blur(8px);
+}
+
+.help-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(226, 224, 217, 0.05);
+}
+
+.help-title {
+  color: #e61919;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.help-close {
+  background: none;
+  border: none;
+  color: rgba(226, 224, 217, 0.4);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.help-close:hover {
+  color: #e2e0d9;
+}
+
+.help-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.help-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.help-item:hover {
+  background: rgba(230, 25, 25, 0.1);
+}
+
+.help-command {
+  color: #e61919;
+  font-size: 0.75rem;
+  font-weight: bold;
+  min-width: 120px;
+}
+
+.help-description {
+  color: rgba(226, 224, 217, 0.5);
+  font-size: 0.7rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .terminal-bar {
+    left: 64px;
+    padding: 0.5rem 1rem;
+  }
+
+  .prompt-text {
+    font-size: 0.7rem;
+  }
+}

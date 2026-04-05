@@ -1,8 +1,18 @@
 <section id="projects" class="section-shell pb-12 md:pb-16">
-  <h2 class="section-title">Proyectos</h2>
+  <div class="border-l-4 border-highlight-red pl-8 mb-12">
+    <h1
+      class="text-3xl md:text-4xl font-bold font-mono uppercase tracking-widest text-highlight-red mb-3"
+    >
+      DATA_CORE / PROJECTS_ARCHIVE
+    </h1>
+    <p class="text-sm font-printer opacity-60">
+      3-COLUMN GRID INITIALIZED... RENDERING ARCHIVAL SLOTS...
+    </p>
+  </div>
 
-  <div class="comic-card p-4 md:p-5 mb-5">
-    <p class="text-slate-300 text-sm mb-3">Filtro interactivo (Angular)</p>
+  <!-- Filters -->
+  <div class="punch-card bg-card-cream text-card-ink p-5 mb-6 filing-shadow">
+    <p class="text-slate-300 text-sm mb-3 font-printer opacity-60">Filtro interactivo (Angular)</p>
     <div class="flex flex-wrap gap-2">
       @for (filter of filters; track filter) {
         <button
@@ -19,39 +29,78 @@
 
   <div class="projects-grid">
     @for (project of filteredProjects(); track project.name) {
-      <article class="comic-card p-5 glitch-hover project-card" [class.project-card--featured]="project.featured">
-        <header class="project-head">
-          <h3 class="text-xl font-bold text-sky-300">{{ project.name }}</h3>
-          <span class="project-status" [class.project-status--mvp]="project.status === 'MVP'">{{ project.status }}</span>
-        </header>
-
-        <div class="project-visual" [class.project-visual--mermaid]="project.visualType === 'mermaid'">
-          <p class="project-visual-label">{{ project.visualType === 'mermaid' ? 'DB / Flow schema' : 'Terminal preview' }}</p>
-          <pre>{{ project.visualSnippet }}</pre>
+      <article
+        class="punch-card bg-card-cream text-card-ink p-8 flex flex-col filing-shadow border-b-8 border-card-ink/5 project-card"
+        [class.project-card--featured]="project.featured"
+      >
+        <div class="flex justify-between items-start mb-8">
+          <div>
+            <span class="text-[10px] font-bold opacity-50 uppercase tracking-[0.2em] font-mono">
+              {{ project.category | uppercase }}
+            </span>
+            <h3
+              class="text-2xl font-mono font-bold uppercase mt-1 leading-tight tracking-tighter text-card-ink"
+            >
+              {{ project.name }}
+            </h3>
+          </div>
+          <div
+            class="shrink-0 w-12 h-12 border border-card-ink/20 rounded flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-3xl text-card-ink/30">
+              {{ project.visualType === 'mermaid' ? 'flowchart' : 'terminal' }}
+            </span>
+          </div>
         </div>
 
-        <p class="mt-2 text-slate-100 text-sm leading-relaxed">{{ project.description }}</p>
+        <div class="flex-grow font-printer text-sm space-y-4">
+          <p
+            class="leading-relaxed border-l-2 border-highlight-red/40 pl-4 italic text-card-ink/80"
+          >
+            "{{ project.description }}"
+          </p>
 
-        <div class="project-tags">
-          @for (tag of project.stack; track tag) {
-            <span class="project-tag">{{ tag }}</span>
-          }
+          <div
+            class="project-visual project-visual--mermaid"
+            [class.project-visual--terminal]="project.visualType === 'terminal'"
+          >
+            <p class="project-visual-label">
+              {{ project.visualType === 'mermaid' ? 'DB / Flow schema' : 'Terminal preview' }}
+            </p>
+            <pre>{{ project.visualSnippet }}</pre>
+          </div>
+
+          <div class="project-tags">
+            @for (tag of project.stack; track tag) {
+              <span class="project-tag">{{ tag }}</span>
+            }
+          </div>
+
+          <p class="project-impact">{{ project.impact }}</p>
         </div>
 
-        <p class="project-impact">{{ project.impact }}</p>
-
-        <div class="project-actions">
-          <a class="project-link" [href]="project.sourceUrl" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-1.03-.02-1.86-2.78.62-3.37-1.2-3.37-1.2-.45-1.19-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.33 1.11 2.9.85.09-.67.35-1.11.63-1.36-2.22-.26-4.55-1.14-4.55-5.09 0-1.13.39-2.05 1.03-2.78-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.06A9.27 9.27 0 0 1 12 6.87c.85 0 1.72.12 2.53.35 1.91-1.34 2.75-1.06 2.75-1.06.55 1.41.2 2.46.1 2.72.64.73 1.03 1.65 1.03 2.78 0 3.96-2.33 4.82-4.56 5.08.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .27.18.6.69.49A10.2 10.2 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"/></svg>
-            <span>View Source</span>
+        <div class="mt-8 flex gap-3">
+          <a
+            class="flex-1 bg-card-ink text-white py-3 text-center text-[10px] font-bold uppercase tracking-widest hover:bg-highlight-red transition-all"
+            [href]="project.sourceUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            EXECUTE
           </a>
-
           @if (project.demoUrl) {
-            <a class="project-link project-link--demo" [href]="project.demoUrl" target="_blank" rel="noopener noreferrer">
-              <span>Live Demo</span>
+            <a
+              class="flex-1 border border-card-ink/20 py-3 text-center text-[10px] font-bold uppercase tracking-widest hover:bg-card-ink/5 transition-all"
+              [href]="project.demoUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LIVE DEMO
             </a>
           }
         </div>
+
+        <div class="absolute bottom-0 left-0 right-0 h-3 perforated-edge opacity-20"></div>
       </article>
     }
   </div>

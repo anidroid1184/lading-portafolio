@@ -1,12 +1,10 @@
-import { Component, signal } from '@angular/core';
-import { TerminalShell } from './terminal/terminal-shell/terminal-shell';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [TerminalShell],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('lading-portafolio');
-}
+export class App {}

@@ -1,4 +1,5 @@
 import { Component, computed, signal } from '@angular/core';
+import { UpperCasePipe } from '@angular/common';
 
 type ProjectCategory = 'all' | 'backend' | 'python' | 'go';
 
@@ -19,7 +20,7 @@ type ProjectItem = {
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [],
+  imports: [UpperCasePipe],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })
@@ -73,7 +74,12 @@ export class Projects {
       return all;
     }
     if (selected === 'backend') {
-      return all.filter((project) => project.category === 'backend' || project.category === 'python' || project.category === 'go');
+      return all.filter(
+        (project) =>
+          project.category === 'backend' ||
+          project.category === 'python' ||
+          project.category === 'go',
+      );
     }
     return all.filter((project) => project.category === selected);
   });

@@ -1,0 +1,36 @@
+<div class="loading-screen">
+  <div class="loading-content">
+    <div class="loading-title">
+      <span class="text-highlight-red font-bold">[[</span>
+      SYSTEM BOOT SEQUENCE
+      <span class="text-highlight-red font-bold">]]</span>
+    </div>
+
+    <div class="stages-container">
+      @for (stage of stages; track stage.message; let i = $index) {
+        <div
+          class="stage-item"
+          [class.stage-lit]="i <= activeStage()"
+          [class.stage-current]="i === activeStage()"
+        >
+          <span class="stage-indicator">
+            <span class="indicator-dot" [class.dot-lit]="i <= activeStage()"></span>
+          </span>
+          <span class="stage-message">{{ stage.message }}</span>
+        </div>
+      }
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" [style.width.%]="progress()"></div>
+      </div>
+      <div class="progress-info">
+        <span class="progress-text">{{ progressBarText() }}</span>
+        <span class="progress-percent">{{ progressPercent() }}</span>
+      </div>
+    </div>
+
+    <button class="skip-button" (click)="skip()">Presiona para saltar</button>
+  </div>
+</div>
