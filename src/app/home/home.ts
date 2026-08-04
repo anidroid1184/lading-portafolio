@@ -17,9 +17,11 @@ export class Home implements AfterViewInit, OnDestroy {
   private _observer?: IntersectionObserver;
   private _cmdService = inject(TerminalCommandService);
 
-  readonly sidebarOpen = signal(true);
+  readonly sidebarOpen = signal(false);
   readonly avatarUrl = 'avatar.jpeg';
   readonly submitted = signal(false);
+  showSidebarHint = false;
+  private _hintTimeout?: ReturnType<typeof setTimeout>;
 
   readonly form = this._fb.group({
     name: ['', Validators.required],
@@ -94,26 +96,35 @@ export class Home implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     const grid = document.querySelector('.motifs-grid');
-    if (!grid) return;
-    const children = Array.from(grid.children) as HTMLElement[];
-    this._observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          const host = entry.target as HTMLElement;
-          if (entry.isIntersecting) host.classList.add('motif-visible');
-          else host.classList.remove('motif-visible');
-        }
-      },
-      { threshold: 0.15 },
-    );
-    children.forEach((child, i) => {
-      child.style.setProperty('--slide-from', i % 2 === 0 ? '-40px' : '40px');
-      this._observer!.observe(child);
-    });
+    if (grid) {
+      const children = Array.from(grid.children) as HTMLElement[];
+      this._observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            const host = entry.target as HTMLElement;
+            if (entry.isIntersecting) host.classList.add('motif-visible');
+            else host.classList.remove('motif-visible');
+          }
+        },
+        { threshold: 0.15 },
+      );
+      children.forEach((child, i) => {
+        child.style.setProperty('--slide-from', i % 2 === 0 ? '-40px' : '40px');
+        this._observer!.observe(child);
+      });
+    }
+    this._hintTimeout = setTimeout(() => {
+      this.showSidebarHint = true;
+    }, 4000);
   }
 
   ngOnDestroy(): void {
     this._observer?.disconnect();
+    clearTimeout(this._hintTimeout);
+  }
+
+  dismissSidebarHint(): void {
+    this.showSidebarHint = false;
   }
 
   scrollTo(target: string): void {
@@ -139,6 +150,7 @@ export class Home implements AfterViewInit, OnDestroy {
   }
 
   toggleSidebar(): void {
+    this.showSidebarHint = false;
     this.sidebarOpen.update((v) => !v);
   }
 }

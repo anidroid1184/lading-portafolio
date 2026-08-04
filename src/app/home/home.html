@@ -59,13 +59,24 @@
   <div class="main-content">
     <!-- Toolbar -->
     <div class="toolbar-top">
-      <button
-        class="toolbar-btn"
-        (click)="toggleSidebar()"
-        [attr.aria-label]="sidebarOpen() ? 'Ocultar barra lateral' : 'Mostrar barra lateral'"
-      >
-        <span class="material-symbols-outlined">{{ sidebarOpen() ? 'menu_open' : 'menu' }}</span>
-      </button>
+      <div class="toolbar-left">
+        <button
+          class="toolbar-btn"
+          (click)="toggleSidebar()"
+          [attr.aria-label]="sidebarOpen() ? 'Ocultar barra lateral' : 'Mostrar barra lateral'"
+        >
+          <span class="material-symbols-outlined">{{ sidebarOpen() ? 'menu_open' : 'menu' }}</span>
+        </button>
+        @if (showSidebarHint && !sidebarOpen()) {
+          <div class="sidebar-hint-popup">
+            <div class="sidebar-hint-arrow" aria-hidden="true"></div>
+            <div class="sidebar-hint-body">
+              <p class="sidebar-hint-text">Abre el menú para ver tu perfil y enlaces.</p>
+              <button class="sidebar-hint-close" (click)="dismissSidebarHint()" aria-label="Cerrar">×</button>
+            </div>
+          </div>
+        }
+      </div>
       <button class="toolbar-btn lang-toggle" (click)="toggleLang()" [attr.aria-label]="i18n.isEs() ? 'Switch to English' : 'Cambiar a español'">
         <span class="lang-flag">{{ i18n.isEs() ? 'EN' : 'ES' }}</span>
       </button>
