@@ -31,59 +31,70 @@ export class Home implements AfterViewInit, OnDestroy {
 
   readonly projects: MotifProject[] = [
     {
-      name: 'Attendance System',
+      name: 'Forge API',
       index: '001-A',
       featured: true,
-      description: 'Sistema de control de asistencia con API REST y gestión de registros.',
-      impact: 'Optimicé consultas de asistencia reduciendo la latencia de respuesta en un 40%.',
-      stack: ['FastAPI', 'Redis', 'PostgreSQL', 'Docker'],
-      icon: 'fingerprint',
+      description:
+        'API REST mid-level con FastAPI: JWT, CRUD con ownership, validación Pydantic y rate limiting.',
+      impact:
+        'Demuestra auth defensiva, autorización por recurso y tests adversariales de bypass.',
+      stack: ['Python', 'FastAPI', 'JWT', 'Pydantic', 'Docker'],
+      icon: 'api',
       accentColor: '#cc9a2e',
+      sourceUrl: 'https://github.com/anidroid1184/forge-api',
+      demoUrl: 'https://anidroid1184.github.io/forge-api/',
     },
     {
-      name: 'Palette ID',
+      name: 'Dispatch Q',
       index: '002-B',
-      description: 'Identificación de paletas desde imágenes para análisis visual.',
-      impact: 'Reduje el tiempo de extracción de paleta para prototipos de branding visual.',
-      stack: ['Python', 'OpenCV', 'FastAPI'],
-      icon: 'palette',
+      description:
+        'Cola de tareas con reintentos, dead-letter e idempotencia (ARQ/Redis + fallback in-memory).',
+      impact:
+        'Patrones de resiliencia de worker: backoff, DLQ y claim atómico bajo concurrencia.',
+      stack: ['Python', 'ARQ', 'Redis', 'FastAPI', 'asyncio'],
+      icon: 'queue',
       accentColor: '#e8b840',
+      sourceUrl: 'https://github.com/anidroid1184/dispatch-q',
+      demoUrl: 'https://anidroid1184.github.io/dispatch-q/',
     },
     {
-      name: 'Auth Service',
+      name: 'Pipe Quality',
       index: '003-C',
-      description: 'Microservicio de autenticación con JWT y RBAC granular.',
-      impact: 'Diseñé RBAC simple y mantenible para acelerar el desarrollo de nuevas features.',
-      stack: ['Go', 'REST', 'JWT', 'PostgreSQL'],
-      icon: 'lock',
+      description:
+        'Pipeline ETL con gates de calidad: schema drift, null rates, integridad y outliers.',
+      impact:
+        'Frena datos malos antes del load con reportes claros y fixtures adversariales.',
+      stack: ['Python', 'ETL', 'SQLite', 'CLI', 'pytest'],
+      icon: 'account_tree',
       accentColor: '#cc9a2e',
+      sourceUrl: 'https://github.com/anidroid1184/pipe-quality',
+      demoUrl: 'https://anidroid1184.github.io/pipe-quality/',
     },
     {
-      name: 'Node Redactor',
+      name: 'Hook Relay',
       index: '004-D',
-      description: 'Automatización de enmascaramiento de datos PII con procesamiento en streaming.',
-      impact: 'Eliminé riesgo de exposición de datos sensibles en pipelines de logging.',
-      stack: ['Go', 'Kafka', 'Redis'],
-      icon: 'ink_eraser',
+      description:
+        'Webhooks event-driven con HMAC-SHA256, anti-replay, idempotencia y outbox transaccional.',
+      impact:
+        'Entrega confiable post-crash: firma verificada, eventos únicos y dispatcher con retries.',
+      stack: ['Python', 'FastAPI', 'HMAC', 'Outbox', 'SQLite'],
+      icon: 'hub',
       accentColor: '#b8943f',
+      sourceUrl: 'https://github.com/anidroid1184/hook-relay',
+      demoUrl: 'https://anidroid1184.github.io/hook-relay/',
     },
     {
-      name: 'Grid Monitor',
+      name: 'Pulse Obs',
       index: '005-E',
-      description: 'Dashboard de visualización y análisis de paquetes de red en tiempo real.',
-      impact: 'Reduje el tiempo de diagnóstico de incidencias de red en un 60%.',
-      stack: ['Python', 'WebSocket', 'D3.js'],
+      description:
+        'Servicio de referencia con health/ready, métricas Prometheus, logging JSON y hardening.',
+      impact:
+        'Listo para ops: fail-fast en producción, request_id, headers de seguridad y límites de body.',
+      stack: ['Python', 'Prometheus', 'structlog', 'FastAPI', 'pydantic-settings'],
       icon: 'monitoring',
-      accentColor: '#cc9a2e',
-    },
-    {
-      name: 'Log Parser',
-      index: '006-F',
-      description: 'Middleware de agregación y búsqueda de logs distribuidos.',
-      impact: 'Centralicé +500GB diarios de logs con queries sub-100ms.',
-      stack: ['Go', 'Elasticsearch', 'gRPC'],
-      icon: 'data_object',
       accentColor: '#e8b840',
+      sourceUrl: 'https://github.com/anidroid1184/pulse-obs',
+      demoUrl: 'https://anidroid1184.github.io/pulse-obs/',
     },
   ];
 
