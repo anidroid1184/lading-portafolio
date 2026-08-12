@@ -139,6 +139,37 @@
   margin: 0 0 1rem;
 }
 
+.motif-highlights {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.motif-highlights li {
+  font-family: var(--font-printer);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--color-jacquard-cream, #f0e6d2);
+  opacity: 0.85;
+  padding-left: 0.85rem;
+  position: relative;
+}
+
+.motif-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 4px;
+  height: 4px;
+  border-radius: 1px;
+  background: var(--card-accent, var(--color-jacquard-gold, #cc9a2e));
+  opacity: 0.7;
+}
+
 .motif-threads {
   display: flex;
   flex-wrap: wrap;

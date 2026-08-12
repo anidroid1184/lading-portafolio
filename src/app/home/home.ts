@@ -31,14 +31,96 @@ export class Home implements AfterViewInit, OnDestroy {
 
   readonly projects: MotifProject[] = [
     {
-      name: 'Forge API',
+      name: 'Embedded Labs',
       index: '001-A',
       featured: true,
       description:
-        'API REST mid-level con FastAPI: JWT, CRUD con ownership, validación Pydantic y rate limiting.',
+        'Laboratorio visual open-source para aprender programación de bajo nivel: bits, máscaras, shifts y el camino hacia embedded/kernel.',
+      highlights: [
+        'Player gráfico de lecciones con animación de bits paso a paso',
+        'API de lecciones y progreso (Rust Axum + Postgres)',
+        'Stack local con Docker Compose',
+        'Demo estática en GitHub Pages (progreso en localStorage)',
+      ],
       impact:
-        'Demuestra auth defensiva, autorización por recurso y tests adversariales de bypass.',
-      stack: ['Python', 'FastAPI', 'JWT', 'Pydantic', 'Docker'],
+        'Aprender haciendo: infraestructura real, frontend visual y contenido de lecciones extensible.',
+      stack: ['React', 'TypeScript', 'Rust', 'Axum', 'Postgres', 'Docker'],
+      icon: 'memory',
+      accentColor: '#cc9a2e',
+      sourceUrl: 'https://github.com/anidroid1184/embedded_labs',
+      demoUrl: 'https://anidroid1184.github.io/embedded_labs/',
+    },
+    {
+      name: 'OpsHub',
+      index: '002-B',
+      description:
+        'Consola operativa multi-rol para dropshipping: login mock y dashboard por rol (CEO, supervisor, gestores, dropshipper).',
+      highlights: [
+        'UI estática de portafolio sin secretos ni API live',
+        'Roles mock con narrativa y stats fixture',
+        'Basada en producto FastAPI + JWT + Redis + Postgres',
+        'Demo Pages lista para reclutadores',
+      ],
+      impact:
+        'Muestra el look operativo multi-rol sin exponer el stack de producción del cliente.',
+      stack: ['FastAPI', 'JWT', 'Redis', 'Postgres', 'HTML/CSS/JS'],
+      icon: 'dashboard',
+      accentColor: '#e8b840',
+      sourceUrl: 'https://github.com/anidroid1184/opshub-demo',
+      demoUrl: 'https://anidroid1184.github.io/opshub-demo/',
+    },
+    {
+      name: 'Vía Transfer',
+      index: '003-C',
+      description:
+        'Estimador de transferencia vehicular: formulario interactivo con cálculo fixture en el navegador.',
+      highlights: [
+        'UI del estimador sin login en Pages',
+        'Cálculo local aproximado con fixtures',
+        'Origen: FastAPI + JWT cookie + Redis + SQLite',
+        'Demo Pages deployable sin backend',
+      ],
+      impact:
+        'Demo interactiva del flujo de estimación sin hospedar API ni secretos.',
+      stack: ['FastAPI', 'JWT', 'Redis', 'SQLite', 'HTML/CSS/JS'],
+      icon: 'directions_car',
+      accentColor: '#cc9a2e',
+      sourceUrl: 'https://github.com/anidroid1184/via-transfer-demo',
+      demoUrl: 'https://anidroid1184.github.io/via-transfer-demo/',
+    },
+    {
+      name: 'AdLens',
+      index: '004-D',
+      description:
+        'Lectura de creativos publicitarios con modo mock (JSON/PDF fixtures) end-to-end visual.',
+      highlights: [
+        'Prototype HTML/CSS/JS + fixtures mock',
+        'Flujo Analizar creativo → resultado fixture',
+        'Sin Apify/OpenAI en Pages (mock por defecto)',
+        'Demo Pages lista para reclutadores',
+      ],
+      impact:
+        'Demuestra el flujo de análisis de creativos sin keys ni backend live.',
+      stack: ['FastAPI', 'HTML/CSS/JS', 'Mock fixtures'],
+      icon: 'ad_group',
+      accentColor: '#b8943f',
+      sourceUrl: 'https://github.com/anidroid1184/adlens-demo',
+      demoUrl: 'https://anidroid1184.github.io/adlens-demo/',
+    },
+    {
+      name: 'Forge API',
+      index: '005-E',
+      description:
+        'API REST con FastAPI: autenticación JWT, CRUD con ownership por recurso, validación Pydantic y rate limiting.',
+      highlights: [
+        'JWT access/refresh y rutas protegidas',
+        'CRUD con ownership: solo el dueño muta su recurso',
+        'Validación Pydantic end-to-end',
+        'Rate limiting para abuso y noise',
+      ],
+      impact:
+        'Auth defensiva y autorización por recurso; evidencia de API mid-level lista para demos y revisión de código.',
+      stack: ['Python', 'FastAPI', 'JWT', 'Ownership', 'Rate limit', 'Pydantic'],
       icon: 'api',
       accentColor: '#cc9a2e',
       sourceUrl: 'https://github.com/anidroid1184/forge-api',
@@ -46,12 +128,18 @@ export class Home implements AfterViewInit, OnDestroy {
     },
     {
       name: 'Dispatch Q',
-      index: '002-B',
+      index: '006-F',
       description:
-        'Cola de tareas con reintentos, dead-letter e idempotencia (ARQ/Redis + fallback in-memory).',
+        'Cola de tareas con retries, backoff exponencial y DLQ. API FastAPI + CLI sobre Redis/ARQ (con fallback in-memory).',
+      highlights: [
+        'Retries con backoff ante fallos transitorios',
+        'Dead-letter queue (DLQ) para jobs irrecuperables',
+        'API FastAPI y CLI para encolar/inspeccionar',
+        'Worker ARQ/Redis con claim seguro bajo concurrencia',
+      ],
       impact:
-        'Patrones de resiliencia de worker: backoff, DLQ y claim atómico bajo concurrencia.',
-      stack: ['Python', 'ARQ', 'Redis', 'FastAPI', 'asyncio'],
+        'Patrones de resiliencia de workers: reintentos controlados, DLQ e idempotencia operativa.',
+      stack: ['Python', 'FastAPI', 'ARQ', 'Redis', 'Retries', 'DLQ', 'CLI'],
       icon: 'queue',
       accentColor: '#e8b840',
       sourceUrl: 'https://github.com/anidroid1184/dispatch-q',
@@ -59,12 +147,18 @@ export class Home implements AfterViewInit, OnDestroy {
     },
     {
       name: 'Pipe Quality',
-      index: '003-C',
+      index: '007-G',
       description:
-        'Pipeline ETL con gates de calidad: schema drift, null rates, integridad y outliers.',
+        'Pipeline ETL ingest → transform → validate → load con quality gates. Entrada CSV/JSON hacia SQLite.',
+      highlights: [
+        'Flujo ingest → transform → validate → load',
+        'Quality gates: schema, null rates, integridad',
+        'Fuentes CSV/JSON con reportes de rechazo',
+        'Persistencia SQLite y CLI reproducible',
+      ],
       impact:
-        'Frena datos malos antes del load con reportes claros y fixtures adversariales.',
-      stack: ['Python', 'ETL', 'SQLite', 'CLI', 'pytest'],
+        'Detiene datos malos antes del load; gates de calidad accionables para pipelines reales.',
+      stack: ['Python', 'ETL', 'Quality gates', 'CSV/JSON', 'SQLite', 'CLI'],
       icon: 'account_tree',
       accentColor: '#cc9a2e',
       sourceUrl: 'https://github.com/anidroid1184/pipe-quality',
@@ -72,12 +166,18 @@ export class Home implements AfterViewInit, OnDestroy {
     },
     {
       name: 'Hook Relay',
-      index: '004-D',
+      index: '008-H',
       description:
-        'Webhooks event-driven con HMAC-SHA256, anti-replay, idempotencia y outbox transaccional.',
+        'Relay de webhooks con verificación HMAC, anti-replay, idempotencia y outbox para entrega confiable.',
+      highlights: [
+        'Firma HMAC y rechazo de payloads inválidos',
+        'Anti-replay por ventana temporal / nonce',
+        'Idempotencia de eventos recibidos',
+        'Outbox para reenvío post-crash',
+      ],
       impact:
-        'Entrega confiable post-crash: firma verificada, eventos únicos y dispatcher con retries.',
-      stack: ['Python', 'FastAPI', 'HMAC', 'Outbox', 'SQLite'],
+        'Entrega event-driven confiable: firma verificada, eventos únicos y dispatcher con reintentos.',
+      stack: ['Python', 'FastAPI', 'HMAC', 'Anti-replay', 'Idempotencia', 'Outbox'],
       icon: 'hub',
       accentColor: '#b8943f',
       sourceUrl: 'https://github.com/anidroid1184/hook-relay',
@@ -85,12 +185,18 @@ export class Home implements AfterViewInit, OnDestroy {
     },
     {
       name: 'Pulse Obs',
-      index: '005-E',
+      index: '009-I',
       description:
-        'Servicio de referencia con health/ready, métricas Prometheus, logging JSON y hardening.',
+        'Servicio de observabilidad de referencia: health/ready, métricas Prometheus, structlog y config fail-fast.',
+      highlights: [
+        'Endpoints /health y /ready para orquestación',
+        'Métricas Prometheus exportables',
+        'Logging estructurado con structlog',
+        'Config fail-fast: arranque seguro en producción',
+      ],
       impact:
-        'Listo para ops: fail-fast en producción, request_id, headers de seguridad y límites de body.',
-      stack: ['Python', 'Prometheus', 'structlog', 'FastAPI', 'pydantic-settings'],
+        'Base ops-ready: señales de vida, telemetría y endurecimiento de arranque sin sorpresas en runtime.',
+      stack: ['Python', 'FastAPI', 'Prometheus', 'structlog', 'Health/Ready', 'Fail-fast'],
       icon: 'monitoring',
       accentColor: '#e8b840',
       sourceUrl: 'https://github.com/anidroid1184/pulse-obs',

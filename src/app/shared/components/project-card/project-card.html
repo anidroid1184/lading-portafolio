@@ -22,6 +22,15 @@
     </div>
     <h3 class="motif-name">{{ project().name }}</h3>
     <p class="motif-quote">"{{ project().description }}"</p>
+    @if (project().highlights; as highlights) {
+      @if (highlights.length) {
+        <ul class="motif-highlights">
+          @for (item of highlights; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      }
+    }
     <div class="motif-threads">
       @for (tech of project().stack; track tech) {
         <span class="thread-tag" [style.--thread-color]="project().accentColor">{{ tech }}</span>

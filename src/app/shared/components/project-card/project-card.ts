@@ -6,6 +6,8 @@ export type MotifProject = {
   featured?: boolean;
   description: string;
   impact: string;
+  /** Capabilidades clave visibles en la tarjeta (sin cambiar el layout global). */
+  highlights?: string[];
   stack: string[];
   icon: string;
   accentColor: string;

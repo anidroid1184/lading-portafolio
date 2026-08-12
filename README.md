@@ -1,6 +1,31 @@
 # LadingPortafolio
 
+Portafolio personal (Angular) de Juan Sebastián Valencia Londoño. Landing con estética de consola de operador y sección de proyectos (embedded, demos en línea y experimentos Python).
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.1.
+
+## Proyectos destacados
+
+Orden en la landing (`#projects`): primero los maduros/en línea; al final los experimentos Python mid-level.
+
+### Listos / en línea
+
+| Proyecto | Resumen | Código | Demo |
+| --- | --- | --- | --- |
+| **Embedded Labs** | Lab visual de bits/máscaras (React + Rust Axum). | [repo](https://github.com/anidroid1184/embedded_labs) | [Pages](https://anidroid1184.github.io/embedded_labs/) |
+| **OpsHub** | Consola operativa multi-rol (demo estática). | [repo](https://github.com/anidroid1184/opshub-demo) | [Pages](https://anidroid1184.github.io/opshub-demo/) |
+| **Vía Transfer** | Estimador de transferencia vehicular (demo estática). | [repo](https://github.com/anidroid1184/via-transfer-demo) | [Pages](https://anidroid1184.github.io/via-transfer-demo/) |
+| **AdLens** | Lectura de creativos publicitarios con mock. | [repo](https://github.com/anidroid1184/adlens-demo) | [Pages](https://anidroid1184.github.io/adlens-demo/) |
+
+### Experimentos Python (al final)
+
+| Proyecto | Resumen | Código | Demo |
+| --- | --- | --- | --- |
+| **Forge API** | API REST FastAPI con JWT, CRUD con ownership, Pydantic y rate limiting. | [repo](https://github.com/anidroid1184/forge-api) | [Pages](https://anidroid1184.github.io/forge-api/) |
+| **Dispatch Q** | Cola de tareas con retries, backoff y DLQ; FastAPI + CLI sobre Redis/ARQ. | [repo](https://github.com/anidroid1184/dispatch-q) | [Pages](https://anidroid1184.github.io/dispatch-q/) |
+| **Pipe Quality** | Pipeline ETL ingest → transform → validate → load con quality gates (CSV/JSON → SQLite). | [repo](https://github.com/anidroid1184/pipe-quality) | [Pages](https://anidroid1184.github.io/pipe-quality/) |
+| **Hook Relay** | Relay de webhooks con HMAC, anti-replay, idempotencia y outbox. | [repo](https://github.com/anidroid1184/hook-relay) | [Pages](https://anidroid1184.github.io/hook-relay/) |
+| **Pulse Obs** | Observabilidad de referencia: health/ready, Prometheus, structlog y config fail-fast. | [repo](https://github.com/anidroid1184/pulse-obs) | [Pages](https://anidroid1184.github.io/pulse-obs/) |
 
 ## Development server
 
